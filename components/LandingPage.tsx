@@ -28,7 +28,7 @@ const LandingPage = () => {
       <motion.div
         className="w-full h-full flex justify-center items-start"
         initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1, transition: { ease: "easeOut", duration: 1.2, delay: 3.0 } }}
+        animate={{ opacity: 1, scale: 1, transition: { ease: "easeOut", duration: 0.8, delay: 3.0 } }}
       >
         <HomeCircle src="/../public/images/climbing_yosemite-square.jpeg" text="About" />
         <HomeCircle src="/../public/images/skate-square.jpg" text="Projects" />

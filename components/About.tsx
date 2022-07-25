@@ -1,7 +1,12 @@
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { BsTriangleFill } from "react-icons/bs"
+import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai"
+import { IoIosClose } from "react-icons/io"
 import AboutItem from "./AboutItem"
+import Navigation from "./Navigation"
+import SideImage from "./SideImage"
+import { useState } from "react"
 
 const infoText = [
   {
@@ -29,45 +34,62 @@ const infoText = [
   {
     title: "Hobbies",
     body: `I also enjoy rock climbing, snowboarding,
-          camping, hiking, and playing the guitar. Sitting inside and working on a computer all day can be very intense
-          and isolating, so a lot of my hobbies and free time are spent out in nature or with friends.`
+          camping, hiking, and playing the guitar. Sitting inside and working on a computer all day can be
+          isolating, so a lot of my hobbies and free time are spent out in nature or with friends.`
   }
 ]
 
 const About = () => {
-  return (
-    <motion.div
-      className="w-full h-screen flex justify-around items-center text-white"
-      initial={{ x: "100%", opacity: 0 }}
-      animate={{ x: 0, opacity: 1, transition: { ease: "easeInOut", duration: 0.5, delay: 0.5 } }}
-      exit={{ x: "-100%" }}
-    >
-      <motion.div
-        className="w-1/2 flex flex-col justify-start p-12 h-full"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { ease: "easeInOut", duration: 1.0, delay: 1.0 } }}
-      >
-        <h1 className="text-4xl mb-4">About</h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 1 } }}>
-          Hello, my name is Elias Tracy. I am a senior computer science student at Texas A&M University who loves to
-          learn.
-        </motion.p>
-        {infoText.map((info, index) => {
-          console.log(info.body)
-          return <AboutItem key={index} title={info.title} body={info.body} />
-        })}
-      </motion.div>
+  const [currentItem, setCurrentItem] = useState("Experience")
+  const [toggleNav, setToggleNav] = useState(false)
 
-      <div className="-z-10 w-1/2 h-full flex justify-end">
-        <Image
-          src="/../public/images/climbing_yosemite.jpeg"
-          layout="fill"
-          objectFit="contain"
-          objectPosition="right"
-          alt="climbing_yosemite"
-        />
-      </div>
-    </motion.div>
+  return (
+    <div className="w-full h-full">
+      <AnimatePresence>{toggleNav && <Navigation />}</AnimatePresence>
+      <motion.div
+        className="w-full h-screen flex justify-around items-center text-white bg-black"
+        initial={{ x: "100%", opacity: 0.5 }}
+        animate={{ x: 0, opacity: 1, transition: { ease: "easeInOut", duration: 0.8, delay: 0.5 } }}
+        exit={{ x: "-100%", transition: { ease: "easeOut", duration: 0.75 } }}
+      >
+        <motion.div
+          className="w-1/2 flex flex-col justify-start p-12 h-full"
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1.0, delay: 1.0 } }}
+        >
+          <div className="w-full h-auto flex justify-start items-center mb-8">
+            <motion.div
+              className="h-8 w-8 mr-4 rounded-full cursor-pointer"
+              onClick={() => {
+                setToggleNav(!toggleNav)
+              }}
+            >
+              <AiOutlineMenu
+                color="white"
+                className={`w-full h-full transition transform ${toggleNav && "rotate-90"} hover:scale-110`}
+              />
+            </motion.div>
+            <h1 className="text-4xl">About</h1>
+          </div>
+          <p className="mb-4">
+            Hello, my name is Elias Tracy. I am a senior computer science student at Texas A&M University who loves to
+            take risks.
+          </p>
+          {infoText.map((info, index) => {
+            return (
+              <AboutItem
+                key={index}
+                title={info.title}
+                body={info.body}
+                currentItem={currentItem}
+                setCurrentItem={setCurrentItem}
+              />
+            )
+          })}
+        </motion.div>
+        <SideImage src="/../public/images/climbing_yosemite.jpeg" />
+      </motion.div>
+    </div>
   )
 }
 

@@ -9,7 +9,7 @@ import { BounceLoader } from "react-spinners"
 import { motion, AnimatePresence } from "framer-motion"
 
 const Home: NextPage = () => {
-  const [page, setPage] = useState("Landing")
+  const [page, setPage] = useState("About")
   const [contextChange, setContextChange] = useState(true)
 
   useEffect(() => {
