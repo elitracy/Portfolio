@@ -3,7 +3,7 @@ import Image from "next/image"
 const SideImage = (props: { src: string; direction?: string }) => {
   const { src, direction } = props
   return (
-    <div className="w-1/2 h-full ml-12 pointer-events-none">
+    <div className="w-1/2 h-full ml-12 pointer-events-none overflow-hidden">
       <Image
         src={src}
         width="100%"
@@ -11,7 +11,7 @@ const SideImage = (props: { src: string; direction?: string }) => {
         layout="fill"
         objectFit="contain"
         objectPosition={direction ? direction : "right"}
-        alt="climbing_yosemite"
+        alt="side-image"
       />
     </div>
   )
