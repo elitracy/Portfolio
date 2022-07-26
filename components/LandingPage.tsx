@@ -1,11 +1,8 @@
 import NavCircle from "./NavCircle"
 import { motion } from "framer-motion"
 import { AiOutlineDownload } from "react-icons/ai"
-import useSwr from "swr"
 
 const LandingPage = () => {
-  const { data, error } = useSwr(`api/hello`)
-  console.log(data)
   return (
     <motion.div
       className="w-full h-full flex flex-col justify-start items-center pt-52"
@@ -39,11 +36,8 @@ const LandingPage = () => {
         <NavCircle src="/../public/images/skate-square.jpg" text="Projects" />
         <NavCircle src="/../public/images/flip-square.jpg" text="Contact" />
         <div
-          onClick={() =>
-            window.open("https://drive.google.com/file/d/1q3o6JvqDjgSzllmP6-aLuXma1GWbSKS9/view?usp=sharing")
-          }
+          onClick={() => window.open(process.env.NEXT_PUBLIC_RESUME_LINK)}
           className="w-1/8 m-12 transform hover:scale-110 duration-150 transition-all ease-in-out cursor-pointer"
-          // whileHover={{ scale: 1.1, transition: { ease: "easeIn", duration: 0.05 } }}
         >
           <AiOutlineDownload className="rounded-full border-2 border-gray-800 p-4" size={150} color="white" />
           <h1 className="text-center text-xl tracking-widest text-white">Resume</h1>

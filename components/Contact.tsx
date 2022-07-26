@@ -83,7 +83,7 @@ const Contact = () => {
               <ContactItem
                 text="Resume"
                 icon={<AiOutlineDownload color="white" size={60} onClick={() => window.open()} />}
-                link="https://drive.google.com/file/d/1q3o6JvqDjgSzllmP6-aLuXma1GWbSKS9/view?usp=sharing"
+                link={process.env.NEXT_PUBLIC_RESUME_LINK}
               />
             </motion.div>
           </div>

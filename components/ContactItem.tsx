@@ -1,4 +1,4 @@
-const ContactItem = (props: { text: string; icon: React.ReactElement; link: string; borderColor?: string }) => {
+const ContactItem = (props: { text: string; icon: React.ReactElement; link?: string; borderColor?: string }) => {
   const { text, icon, link, borderColor } = props
   return (
     <div
