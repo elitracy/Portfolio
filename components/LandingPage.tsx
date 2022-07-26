@@ -32,9 +32,9 @@ const LandingPage = () => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1, transition: { ease: "easeOut", duration: 0.8, delay: 3.0 } }}
       >
-        <NavCircle src={"/public/images/climbing_yosemite-square.jpeg"} text="About" />
-        <NavCircle src="/public/images/skate-square.jpg" text="Projects" />
-        <NavCircle src="/public/images/flip-square.jpg" text="Contact" />
+        <NavCircle src="public/images/climbing_yosemite-square.jpeg" text="About" />
+        <NavCircle src="public/images/skate-square.jpg" text="Projects" />
+        <NavCircle src="public/images/flip-square.jpg" text="Contact" />
         <div
           onClick={() => window.open(process.env.NEXT_PUBLIC_RESUME_LINK)}
           className="w-1/8 m-12 transform hover:scale-110 duration-150 transition-all ease-in-out cursor-pointer"
