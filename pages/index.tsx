@@ -3,12 +3,14 @@ import Head from "next/head"
 import LandingPage from "../components/LandingPage"
 import About from "../components/About"
 import Projects from "../components/Projects"
+import Resume from "../components/Resume"
+import Contact from "../components/Contact"
 import { PageContext } from "../utils/pageContext"
 import { useState, useEffect } from "react"
 import { AnimatePresence } from "framer-motion"
 
-const Home: NextPage = () => {
-  const [page, setPage] = useState("Projects")
+const Index: NextPage = () => {
+  const [page, setPage] = useState("Home")
   const [contextChange, setContextChange] = useState(true)
 
   useEffect(() => {
@@ -30,14 +32,11 @@ const Home: NextPage = () => {
         <AnimatePresence>
           {
             {
-              Landing: <LandingPage key="Landing" />,
+              Home: <LandingPage key="Landing Page" />,
               Projects: <Projects key="Projects" />,
               About: <About key="About" />,
-              Contact: (
-                <div className="w-full h-full flex justify-center items-center">
-                  <h1 className="text-black">I am the contact page</h1>
-                </div>
-              )
+              Contact: <Contact />,
+              Resume: <Resume key="Resume" />
             }[page]
           }
         </AnimatePresence>
@@ -46,4 +45,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Index

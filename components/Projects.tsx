@@ -19,7 +19,7 @@ const Projects = () => {
         exit={{ x: "-100%", transition: { ease: "easeOut", duration: 0.75 } }}
       >
         <motion.div
-          className="w-1/2 flex flex-col justify-start p-12 h-full"
+          className="w-2/3 flex flex-col justify-start p-12 h-full"
           initial={{ opacity: 0, x: 300 }}
           animate={{ opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1.0, delay: 1.0 } }}
         >
@@ -37,11 +37,17 @@ const Projects = () => {
             </motion.div>
             <h1 className="text-4xl">Projects</h1>
           </div>
-          {projects.map(p => {
-            return <ProjectItem {...p} key={p.title} />
-          })}
+          <p>
+            I have experience on all ends of the tech stack but I really excel on the frontend. For all of my projects I
+            have designed and progammed the components from scratch!
+          </p>
+          <div className="w-full h-full flex flex-col justify-center items-end">
+            {projects.map(p => {
+              return <ProjectItem {...p} key={p.title} />
+            })}
+          </div>
         </motion.div>
-        <SideImage src="/../public/images/skate.jpg" />
+        {window.innerWidth > 1200 && <SideImage src="/../public/images/skate.jpg" />}
       </motion.div>
     </div>
   )

@@ -12,7 +12,7 @@ const Navigation = () => {
       exit={{ y: "-100%", opacity: 0 }}
     >
       <h1 className="text-white font-medium -mx-20">Elias Tracy</h1>
-      {["Landing", "About", "Projects", "Contact"].map(p => (
+      {["Home", "About", "Projects", "Contact"].map(p => (
         <motion.h1
           key={p}
           className="py-1 my-2 text-center text-lg text-gray-300 transition-all cursor-pointer"
