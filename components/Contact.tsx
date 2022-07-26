@@ -61,14 +61,14 @@ const Contact = () => {
                 borderColor="border-green-800"
               />
               <ContactItem
-                text="Instagram"
-                icon={<AiOutlineInstagram color="white" size={60} />}
-                link="https://www.instagram.com/eli_tracy"
-              />
-              <ContactItem
                 text="Github"
                 icon={<BsGithub color="white" size={60} />}
                 link="https://www.github.com/elitracy"
+              />
+              <ContactItem
+                text="Instagram"
+                icon={<AiOutlineInstagram color="white" size={60} />}
+                link="https://www.instagram.com/eli_tracy"
               />
               <ContactItem
                 text="LinkedIn"
