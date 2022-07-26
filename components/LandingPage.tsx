@@ -38,7 +38,16 @@ const LandingPage = () => {
         <NavCircle src="/../public/images/climbing_yosemite-square.jpeg" text="About" />
         <NavCircle src="/../public/images/skate-square.jpg" text="Projects" />
         <NavCircle src="/../public/images/flip-square.jpg" text="Contact" />
-        <NavCircle src="/../public/images/writing-square.jpg" text="Resume" />
+        <div
+          onClick={() =>
+            window.open("https://drive.google.com/file/d/1q3o6JvqDjgSzllmP6-aLuXma1GWbSKS9/view?usp=sharing")
+          }
+          className="w-1/8 m-12 transform hover:scale-110 duration-150 transition-all ease-in-out cursor-pointer"
+          // whileHover={{ scale: 1.1, transition: { ease: "easeIn", duration: 0.05 } }}
+        >
+          <AiOutlineDownload className="rounded-full border-2 border-gray-800 p-4" size={150} color="white" />
+          <h1 className="text-center text-xl tracking-widest text-white">Resume</h1>
+        </div>
       </motion.div>
     </motion.div>
   )

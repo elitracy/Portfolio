@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion"
-import { AiOutlineMenu, AiOutlineInstagram, AiOutlineLinkedin } from "react-icons/ai"
+import { AiOutlineMenu, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineDownload } from "react-icons/ai"
 import { MdOutlineMail } from "react-icons/md"
 import { BsGithub } from "react-icons/bs"
 import Navigation from "./Navigation"
@@ -25,7 +25,7 @@ const Contact = () => {
           initial={{ opacity: 0, x: 300 }}
           animate={{ opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 1.0, delay: 1.0 } }}
         >
-          <div className="w-full h-auto flex justify-start items-center mb-8">
+          <div className="w-full h-auto flex justify-start items-center">
             <motion.div
               className="h-8 w-8 mr-4 rounded-full cursor-pointer"
               onClick={() => {
@@ -40,8 +40,13 @@ const Contact = () => {
             <h1 className="text-4xl">Contact</h1>
           </div>
           <div className="w-full h-full flex justify-center items-center ">
-            <div className="flex-2 w-full h-full flex flex-col mt-16">
-              <div className="rounded-full mx-auto overflow-hidden border-4 border-gray-800 mb-6">
+            <div className="w-full h-full flex flex-col justify-start mt-16">
+              <motion.div
+                className="rounded-full mx-auto overflow-hidden border-4 border-gray-800 mb-6"
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1, transition: { ease: "easeOut", duration: 0.5, delay: 1.2 } }}
+                exit={{ scale: 0.8, opacity: 0.5 }}
+              >
                 <Image
                   src="/../public/images/headshot-square.JPG"
                   width={250}
@@ -49,11 +54,11 @@ const Contact = () => {
                   objectFit="cover"
                   alt="headshot"
                 />
-              </div>
-              <h2 className="w-2/3 pr-4 text-2xl font-bold mb-3 text-green-500">I'm open to work!</h2>
+              </motion.div>
+              <h2 className="w-2/3 pr-4 text-2xl font-bold mb-3 text-green-500">I am open to work!</h2>
               <p className="pr-4">Shoot me an email or reach out to me on social media.</p>
             </div>
-            <div className="flex flex-col w-1/3 h-full justify-center items-center">
+            <motion.div className="flex flex-col w-1/3 h-full transform -translate-y-4 justify-between items-center">
               <ContactItem
                 text="Email"
                 icon={<MdOutlineMail color="white" size={60} />}
@@ -75,7 +80,12 @@ const Contact = () => {
                 icon={<AiOutlineLinkedin color="white" size={60} onClick={() => window.open()} />}
                 link="https://www.linkedin.com/in/eli-tracy-3608631b8/"
               />
-            </div>
+              <ContactItem
+                text="Resume"
+                icon={<AiOutlineDownload color="white" size={60} onClick={() => window.open()} />}
+                link="https://drive.google.com/file/d/1q3o6JvqDjgSzllmP6-aLuXma1GWbSKS9/view?usp=sharing"
+              />
+            </motion.div>
           </div>
         </motion.div>
         {window.innerWidth > 1200 && <SideImage src="/../public/images/flip.jpg" />}
