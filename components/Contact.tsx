@@ -47,7 +47,7 @@ const Contact = () => {
                 animate={{ scale: 1, opacity: 1, transition: { ease: "easeOut", duration: 0.5, delay: 1.2 } }}
                 exit={{ scale: 0.8, opacity: 0.5 }}
               >
-                <Image src="/images/headshot_square.JPG" width={250} height={250} objectFit="cover" alt="headshot" />
+                <Image src="/images/headshot_square.jpg" width={250} height={250} objectFit="cover" alt="headshot" />
               </motion.div>
               <h2 className="w-2/3 pr-4 text-2xl font-bold mb-3 text-green-500">I am open to work!</h2>
               <p className="pr-4">Shoot me an email or reach out to me on social media.</p>
