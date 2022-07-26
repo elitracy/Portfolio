@@ -88,7 +88,7 @@ const Contact = () => {
             </motion.div>
           </div>
         </motion.div>
-        {window.innerWidth > 1200 && <SideImage src="/../public/images/flip.jpg" />}
+        {window.innerWidth > 1200 && <SideImage src="/images/flip.jpg" />}
       </motion.div>
     </div>
   )

@@ -47,7 +47,7 @@ const Projects = () => {
             })}
           </div>
         </motion.div>
-        {window.innerWidth > 1200 && <SideImage src="/../public/images/skate.jpg" />}
+        {window.innerWidth > 1200 && <SideImage src="/images/skate.jpg" />}
       </motion.div>
     </div>
   )

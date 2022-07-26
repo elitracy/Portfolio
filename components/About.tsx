@@ -87,7 +87,7 @@ const About = () => {
             )
           })}
         </motion.div>
-        {window.innerWidth > 1200 && <SideImage src="/../public/images/climbing_yosemite.jpeg" />}
+        {window.innerWidth > 1200 && <SideImage src="/images/climbing_yosemite.jpeg" />}
       </motion.div>
     </div>
   )
